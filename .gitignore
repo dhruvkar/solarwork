@@ -1,0 +1,5 @@
+*.sqlite
+config.py
+.vagrant
+.pyc
+.DS_Store

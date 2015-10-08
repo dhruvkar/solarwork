@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="panel panel-default">
+  <!-- Default panel contents -->
+  <!-- header class="panel-heading">Today</header>-->
+    <div id="jobs">
+      <input type="search" class="search" placeholder="Search">
+      <table>
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Posted</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody class="list">
+         
+          {% for x in alljobs %}
+            <tr>
+              <td class="title"><a href="{{ x[4] }}" target="_blank">{{ x[0]|capitalize }}</a></td>
+            	<td class="company">{{ x[1] }}</td> 			{# company #}
+            	<td class="date">{{ x[3]|format_date }}</td> {# date #} 
+            	<td class="location">{{ x[2] }}</td> 			{# location #}
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    <script src="http://listjs.com/no-cdn/list.js"></script>
+    
+    $( document ).ready(function() {
+    
+    var options = {
+      valueNames: [ 'title', 'company' ]
+    };
+    var userList = new List('jobs', options);
+    });
+  </div>
+      
+</section>
+
+
+{% endblock %}
