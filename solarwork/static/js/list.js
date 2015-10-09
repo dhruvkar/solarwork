@@ -722,7 +722,7 @@ var document = window.document,
 var List = function(id, options, values) {
 
     var self = this,
-		init,
+    init,
         Item = require('./src/item')(self),
         addAsync = require('./src/add-async')(self),
         parse = require('./src/parse')(self);
@@ -807,12 +807,12 @@ var List = function(id, options, values) {
         return added;
     };
 
-	this.show = function(i, page) {
-		this.i = i;
-		this.page = page;
-		self.update();
+  this.show = function(i, page) {
+    this.i = i;
+    this.page = page;
+    self.update();
         return self;
-	};
+  };
 
     /* Removes object from list.
     * Loops through the list and removes objects where
@@ -906,7 +906,7 @@ var List = function(id, options, values) {
 
     this.update = function() {
         var is = self.items,
-			il = is.length;
+      il = is.length;
 
         self.visibleItems = [];
         self.matchingItems = [];
@@ -916,12 +916,12 @@ var List = function(id, options, values) {
                 is[i].show();
                 self.visibleItems.push(is[i]);
                 self.matchingItems.push(is[i]);
-			} else if (is[i].matching()) {
+      } else if (is[i].matching()) {
                 self.matchingItems.push(is[i]);
                 is[i].hide();
-			} else {
+      } else {
                 is[i].hide();
-			}
+      }
         }
         self.trigger('updated');
         return self;
@@ -1416,68 +1416,47 @@ module.exports = function(list) {
 });
 
 
+require.alias("component-classes/index.js", "list.js/deps/classes/index.js");
+require.alias("component-classes/index.js", "classes/index.js");
+require.alias("component-indexof/index.js", "component-classes/deps/indexof/index.js");
 
-  require.alias("component-classes/index.js", "list.js/deps/classes/index.js");
-  require.alias("component-classes/index.js", "classes/index.js");
-  require.alias("component-indexof/index.js", "component-classes/deps/indexof/index.js");
+require.alias("segmentio-extend/index.js", "list.js/deps/extend/index.js");
+require.alias("segmentio-extend/index.js", "extend/index.js");
 
-  require.alias("segmentio-extend/index.js", "list.js/deps/extend/index.js");
-  require.alias("segmentio-extend/index.js", "extend/index.js");
+require.alias("component-indexof/index.js", "list.js/deps/indexof/index.js");
+require.alias("component-indexof/index.js", "indexof/index.js");
 
-  require.alias("component-indexof/index.js", "list.js/deps/indexof/index.js");
-  require.alias("component-indexof/index.js", "indexof/index.js");
+require.alias("javve-events/index.js", "list.js/deps/events/index.js");
+require.alias("javve-events/index.js", "events/index.js");
+require.alias("component-event/index.js", "javve-events/deps/event/index.js");
 
-  require.alias("javve-events/index.js", "list.js/deps/events/index.js");
-  require.alias("javve-events/index.js", "events/index.js");
-  require.alias("component-event/index.js", "javve-events/deps/event/index.js");
+require.alias("timoxley-to-array/index.js", "javve-events/deps/to-array/index.js");
 
-  require.alias("timoxley-to-array/index.js", "javve-events/deps/to-array/index.js");
+require.alias("javve-get-by-class/index.js", "list.js/deps/get-by-class/index.js");
+require.alias("javve-get-by-class/index.js", "get-by-class/index.js");
 
-  require.alias("javve-get-by-class/index.js", "list.js/deps/get-by-class/index.js");
-  require.alias("javve-get-by-class/index.js", "get-by-class/index.js");
+require.alias("javve-get-attribute/index.js", "list.js/deps/get-attribute/index.js");
+require.alias("javve-get-attribute/index.js", "get-attribute/index.js");
 
-  require.alias("javve-get-attribute/index.js", "list.js/deps/get-attribute/index.js");
-  require.alias("javve-get-attribute/index.js", "get-attribute/index.js");
+require.alias("javve-natural-sort/index.js", "list.js/deps/natural-sort/index.js");
+require.alias("javve-natural-sort/index.js", "natural-sort/index.js");
 
-  require.alias("javve-natural-sort/index.js", "list.js/deps/natural-sort/index.js");
-  require.alias("javve-natural-sort/index.js", "natural-sort/index.js");
-
-  require.alias("javve-to-string/index.js", "list.js/deps/to-string/index.js");
-  require.alias("javve-to-string/index.js", "list.js/deps/to-string/index.js");
-  require.alias("javve-to-string/index.js", "to-string/index.js");
-  require.alias("javve-to-string/index.js", "javve-to-string/index.js");
-  require.alias("component-type/index.js", "list.js/deps/type/index.js");
-  require.alias("component-type/index.js", "type/index.js");
-  if (typeof exports == "object") {
-    module.exports = require("list.js");
-  } else if (typeof define == "function" && define.amd) {
-    define(function() {
-      return require("list.js");
-    });
-  } else {
-    this["List"] = require("list.js");
-  }
-})();
-
-
+require.alias("javve-to-string/index.js", "list.js/deps/to-string/index.js");
+require.alias("javve-to-string/index.js", "list.js/deps/to-string/index.js");
+require.alias("javve-to-string/index.js", "to-string/index.js");
+require.alias("javve-to-string/index.js", "javve-to-string/index.js");
+require.alias("component-type/index.js", "list.js/deps/type/index.js");
+require.alias("component-type/index.js", "type/index.js");
+if (typeof exports == "object") {
+  module.exports = require("list.js");
+} else if (typeof define == "function" && define.amd) {
+  define(function(){ return require("list.js"); });
+} else {
+  this["List"] = require("list.js");
+}})();
 
 var options = {
-  valueNames: ['title', 'company', 'date', 'location']
+  valueNames: [ 'title', 'company', 'location']
 };
 
-var jobsList = new List('jobs', options);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var userList = new List('jobs', options);
