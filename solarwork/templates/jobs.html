@@ -1,15 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <section class="panel panel-default">
   <!-- Default panel contents -->
   <!-- header class="panel-heading">Today</header>-->
   
     <div id="jobs">
       <input type="search" class="search" placeholder="Search">
-      <table>
-        <thead>
+      <table class="table">
+        <thead class = "table">
           <tr>
             <th>Job Title</th>
             <th>Company</th>
@@ -17,8 +16,8 @@
             <th>Location</th>
           </tr>
         </thead>
+
         <tbody class="list">
-         
           {% for x in alljobs %}
             <tr>
               <td class="title"><a href="{{ x[4] }}" target="_blank">{{ x[0]|capitalize }}</a></td>
@@ -30,9 +29,7 @@
         </tbody>
     </table>
     <script src="static/js/list.js"></script>
-    
   </div>
-      
 </section>
 
 

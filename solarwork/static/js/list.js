@@ -1456,7 +1456,7 @@ if (typeof exports == "object") {
 }})();
 
 var options = {
-  valueNames: [ 'title', 'company', 'location']
+  valueNames: [ 'title', 'company', 'location', 'date']
 };
 
 var userList = new List('jobs', options);
