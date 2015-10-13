@@ -8,8 +8,8 @@ from flask import Flask, render_template
 
 # Create cache
 requests_cache.install_cache('kimonolabs_cache', backend='sqlite', expire_after=1800)
-from seia import seia_jobs
-from solarjobs import solarjobs_jobs 
+#from seia import seia_jobs
+#from solarjobs import solarjobs_jobs 
 
 
 # Initialize app
@@ -30,6 +30,8 @@ app.jinja_env.filters['format_date'] = format_date
 # Define homepage to display jobs
 @app.route('/')
 def jobs():
+    from seia import seia_jobs
+    from solarjobs import solarjobs_jobs 
     alljobs = np.concatenate([seia_jobs])
     alljobs = alljobs[alljobs[:,3].argsort()[::-1]]
 
