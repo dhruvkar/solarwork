@@ -42,6 +42,12 @@ def jobs():
 def subscribe():
     return render_template('subscribe.html')
 
+# Post Job page
+#@app.route('/post/')
+#def post_job():
+# //TO DO
+
+
 # Run app
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
