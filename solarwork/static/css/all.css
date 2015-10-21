@@ -27,4 +27,13 @@
 .search:focus {
   outline:none;
 }
-*/
+
+a.btn.custom-button {
+  border-radius: 3px;
+  border: solid 1px #fff;
+  border-color: #fff;
+  margin-top: 8px; /* should use flexbox to center, but too much bootstrap conflicts */
+  padding: 4px 8px;
+  background-color: #d9534f;
+  background-image: none;
+}
