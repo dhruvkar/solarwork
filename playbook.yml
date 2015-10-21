@@ -30,20 +30,20 @@
   - name: Create a projects directory
     file: path=/home/vagrant/projects state=directory
 
-  - name: Add environment variable for the .virtualenvs directory to bashrc (virtualenvwrapper)
-    lineinfile: dest=/home/vagrant/.bashrc
-                regexp=''
-                insertafter=EOF
-                line='export WORKON_HOME=/home/vagrant/.virtualenvs'
- 
-  - name: Add environment variable for the projects directory to bashrc (virtualenvwrapper)
-    lineinfile: dest=/home/vagrant/.bashrc
-                regexp=''
-                insertafter=EOF
-                line='export PROJECT_HOME=/home/vagrant/projects'
- 
-  - name: Add sourcing virtualenvwrapper.sh to bashrc 
-    lineinfile: dest=/home/vagrant/.bashrc
-                regexp=''
-                insertafter=EOF
-                line='source /usr/local/bin/virtualenvwrapper.sh'
+#  - name: Add environment variable for the .virtualenvs directory to bashrc (virtualenvwrapper)
+#    lineinfile: dest=/home/vagrant/.bashrc
+#                regexp=''
+#                insertafter=EOF
+#                line='export WORKON_HOME=/home/vagrant/.virtualenvs'
+# 
+#  - name: Add environment variable for the projects directory to bashrc (virtualenvwrapper)
+#    lineinfile: dest=/home/vagrant/.bashrc
+#                regexp=''
+#                insertafter=
+#                line='export PROJECT_HOME=/home/vagrant/projects'
+# 
+#  - name: Add sourcing virtualenvwrapper.sh to bashrc 
+#    lineinfile: dest=/home/vagrant/.bashrc
+#                regexp=''
+#                insertafter=EOF
+#                line='source /usr/local/bin/virtualenvwrapper.sh'

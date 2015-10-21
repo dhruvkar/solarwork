@@ -8,9 +8,9 @@ To run:
 
  1. git clone https://github.com/dhruvkar/solarwork.git
  1. Add a config.py file to solarwork/solarwork/ and define kimonolabs API endpoints.
- 1. `vagrant up`
+ 1. `cd solarwork && vagrant up`
  1. `vagrant ssh`
- 1. `pip install -r requirements`
+ 1. `sudo pip install -r requirements`
  1. `cd solarwork`
  1. `python quickstart`
 
