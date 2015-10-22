@@ -10,8 +10,8 @@ To run:
  1. Add a config.py file to solarwork/solarwork/ and define kimonolabs API endpoints.
  1. `cd solarwork && vagrant up`
  1. `vagrant ssh`
- 1. `sudo pip install -r requirements`
- 1. `cd solarwork`
- 1. `python quickstart`
+ 1. `cd ~/dev/solarwork`
+ 1. `sudo pip install -r requirements.txt`
+ 1. `python quickstart.py`
 
 You should now be able to see the site by going to "localhost:5000"
