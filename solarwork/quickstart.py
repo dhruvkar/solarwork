@@ -5,9 +5,11 @@ import datetime
 import numpy as np
 import arrow
 from flask import Flask, render_template
+from config import *
+from seia import *
 
 # Create cache
-requests_cache.install_cache('kimonolabs_cache', backend='sqlite', expire_after=1800)
+requests_cache.install_cache('kimonolabs_cache', backend='sqlite', expire_after=180)
 #from seia import seia_jobs
 #from solarjobs import solarjobs_jobs 
 
@@ -30,8 +32,12 @@ app.jinja_env.filters['format_date'] = format_date
 # Define homepage to display jobs
 @app.route('/')
 def jobs():
-    from seia import seia_jobs
-    from solarjobs import solarjobs_jobs 
+    titles = get_titles(SEIA_URL)
+    companies = get_companies(SEIA_URL)
+    locations = get_locations(SEIA_URL)
+    dates = get_dates(SEIA_URL)
+    links = get_links(SEIA_URL)
+    seia_jobs = create_np_array([titles, companies, locations, dates, links])
     alljobs = np.concatenate([seia_jobs])
     alljobs = alljobs[alljobs[:,3].argsort()[::-1]]
 

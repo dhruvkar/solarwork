@@ -20,7 +20,7 @@
         <tbody class="list">
           {% for x in alljobs %}
             <tr>
-              <td class="title"><a href="{{ x[4] }}" target="_blank">{{ x[0]|capitalize }}</a></td>
+              <td class="title"><a href="{{ x[4] }}" target="_blank">{{ x[0] }}</a></td>
             	<td class="company">{{ x[1] }}</td> 			{# company #}
             	<td class="date">{{ x[3]|format_date }}</td> {# date #} 
             	<td class="location">{{ x[2] }}</td> 			{# location #}
