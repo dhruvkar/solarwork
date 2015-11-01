@@ -4,10 +4,13 @@
 <section class="panel panel-default">
   <!-- Default panel contents -->
   <!-- header class="panel-heading">Today</header>-->
-  
+    <div class="search-bar">
+      <input type="search" class="search" placeholder="Search" autofocus=true>
+      <span>Search by keyword</span>
+    </div>
+
     <div id="jobs">
-      <input type="search" class="search" placeholder="Search">
-      <table class="table">
+      <table class="table sortable">
         <thead class = "table">
           <tr>
             <th>Job Title</th>
@@ -22,7 +25,7 @@
             <tr>
               <td class="title"><a href="{{ x[4] }}" target="_blank">{{ x[0] }}</a></td>
             	<td class="company">{{ x[1] }}</td> 			{# company #}
-            	<td class="date">{{ x[3]|format_date }}</td> {# date #} 
+            	<td class="date">{{ x[3]|format_date }}</td> {# date #}
             	<td class="location">{{ x[2] }}</td> 			{# location #}
             </tr>
           {% endfor %}
