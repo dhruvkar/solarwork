@@ -49,9 +49,9 @@ def subscribe():
     return render_template('subscribe.html')
 
 # Post Job page
-#@app.route('/post/')
-#def post_job():
-# //TO DO
+@app.route('/post/')
+def post_job():
+    return render_template('postjob.html')
 
 
 # Run app
