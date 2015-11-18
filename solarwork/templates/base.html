@@ -23,7 +23,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <a href="/post/" class="custom-button btn-lg btn btn-danger pull-right">Post a Job</a>
+        <a href="/post/" class="custom-button btn-lg btn btn-danger pull-right">Post a Job: $50 for 30 days</a>
         <!--li><a href="/subscribe/">Subscribe</a></li-->
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -31,8 +31,10 @@
 </nav>
 {% block content %} {% endblock %}
 
-<a title="Real Time Analytics" href="http://clicky.com/100885074"><img alt="Real Time Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
 <script src="//static.getclicky.com/js" type="text/javascript"></script>
 <script type="text/javascript">try{ clicky.init(100885074); }catch(e){}</script>
 <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100885074ns.gif" /></p></noscript>
+
+<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
 </html>

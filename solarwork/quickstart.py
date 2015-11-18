@@ -6,7 +6,7 @@ import numpy as np
 import arrow
 from flask import Flask, render_template
 from config import *
-from seia import *
+from jobs import *
 
 # Create cache
 requests_cache.install_cache('kimonolabs_cache', backend='sqlite', expire_after=180)

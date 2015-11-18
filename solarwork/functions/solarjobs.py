@@ -1,7 +1,6 @@
 import requests
 import numpy as np
 from datetime import datetime
-from config import SOLARJOBS_BASIC_URL, SOLARJOBS_DETAIL_URL
 
 DATE_FORMAT = "%m.%d.%Y"
 
